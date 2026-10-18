@@ -1,7 +1,7 @@
 // Functional check of every feature inside the extension popup frame (logged out, throwaway profile).
 const { chromium } = require('playwright');
 const fs = require('fs'), path = require('path'), crypto = require('crypto');
-const EXT = '/Users/igallina/Projetos/worldtimebuddy-chrome-extension', OUT = (process.env.OUT || require('os').tmpdir());
+const EXT = require('path').resolve(__dirname, '..'), OUT = (process.env.OUT || require('os').tmpdir());
 const EXE = process.env.HOME + '/Library/Caches/ms-playwright/chromium-1243/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing';
 const extId = [...crypto.createHash('sha256').update(EXT).digest('hex').slice(0, 32)].map(c => String.fromCharCode(97 + parseInt(c, 16))).join('');
 const results = [];
