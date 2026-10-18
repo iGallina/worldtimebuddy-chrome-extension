@@ -1,0 +1,33 @@
+/* Applies only when slim.js tagged <html> (framed by the popup). */
+html.wtb-ext, html.wtb-ext body { margin: 0; min-width: 0; background: #fff; overflow-x: hidden; }
+/* Left room for the per-row remove / set-home buttons (they sit 30px outside the panel). */
+html.wtb-ext .wrapper { margin: 0 12px 0 34px; }
+/* Header: drop logo + site nav, keep account menu and am/pm/24/MX on one short row. */
+html.wtb-ext #homelink, html.wtb-ext #tabs-nav { display: none !important; }
+html.wtb-ext #logo { height: 30px; overflow: visible; }
+html.wtb-ext #tabs-func { margin-top: -20px; }
+html.wtb-ext #locations_wrapper { margin-top: 0; padding-top: 0; }
+html.wtb-ext #locations { margin-top: 4px; }
+/* Footer, about/getting-started text, ad slot, feedback tab, store promo, ads. */
+html.wtb-ext #social, html.wtb-ext #text-wrapper, html.wtb-ext #toprek,
+html.wtb-ext .wrapper2, html.wtb-ext #feedback-bttn, html.wtb-ext #b_cws,
+html.wtb-ext ins.adsbygoogle, html.wtb-ext [id^="div-gpt"], html.wtb-ext [id^="google_ads"],
+html.wtb-ext iframe[src*="doubleclick"], html.wtb-ext iframe[src*="googlesyndication"] { display: none !important; }
+/* The popup sizes the frame to the content; a scrollbar would steal width and clip the right edge. */
+html.wtb-ext, html.wtb-ext body { scrollbar-width: none; }
+/* Dark mode follows the OS. Invert the page; images and hour tiles are flipped back, and the tiles get a dark
+   palette that keeps their order (night darkest, morning/evening, warm working hours, brightest date tile). */
+@media (prefers-color-scheme: dark) {
+  html.wtb-ext { filter: invert(1) hue-rotate(180deg); }
+  html.wtb-ext img, html.wtb-ext .hourline { filter: invert(1) hue-rotate(180deg); }
+  /* Colors below inside .hourline render as written (double-inverted). */
+  html.wtb-ext .hourline li.tod_n { background-color: #1b2b44; color: #8fa6c8; }
+  html.wtb-ext .hourline li.tod_m, html.wtb-ext .hourline li.tod_e { background-color: #26405f; color: #b4c7e3; }
+  html.wtb-ext .hourline li.tod_d { background-color: #4a4733; color: #ece6bf; }
+  html.wtb-ext .hourline li.tod_c, html.wtb-ext .hourline li.top_boundary + li { background-color: #3b5a86; color: #fff; }
+  /* Selection bands: flipped back too, then given explicit dark-mode colors (cband has opacity .1, so white = faint veil). */
+  html.wtb-ext .band, html.wtb-ext .cband { filter: invert(1) hue-rotate(180deg); }
+  html.wtb-ext .band { border-color: #d0d8e6; }
+  html.wtb-ext .band.band-hover { border-color: #6f9cf2; }
+  html.wtb-ext .cband { background: #fff; }
+}
