@@ -49,3 +49,7 @@ The site also has an official Chrome extension: Web Store id `jdhpjomiingppeefgn
 popup: no page errors, init completes, search, add city keeps the existing list, date picker, 24h, settings and list
 persist after reopening. Needs `npm i playwright` and a Playwright Chromium (branded Chrome ignores
 `--load-extension`). Run: `node test/popup-test.js`.
+
+## Decisions
+
+- 2026-10-18: personal use only; not shared with the worldtimebuddy team (it hides their ads and rewrites their cookies).
