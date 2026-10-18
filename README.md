@@ -17,3 +17,7 @@ Unofficial: not affiliated with or endorsed by World Time Buddy.
 
 - Your worldtimebuddy cookies are switched to `SameSite=None` so the site works inside the popup (details in `NOTES.md`).
 - Signing in from inside the popup doesn't work; sign in on the site itself.
+
+## License
+
+MIT, see [LICENSE](LICENSE).
